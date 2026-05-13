@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Digital Heroes - The ultimate destination for premium tech, fashion, and lifestyle deals at unbeatable prices."
+    />
+    <title>Digital Heroes | Premium Deals</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header class="navbar" role="banner">
+      <div class="logo">
+        <a href="index.html">Digital Heroes</a>
+      </div>
+      <div class="search-bar mega-search-bar" id="global-search-container">
+        \n
+        <select
+          class="search-category-select"
+          id="global-search-category"
+          aria-label="Search Categories"
+        >
+          \n
+          <option value="all">All</option>
+          \n
+          <option value="Tech & Electronics">Tech</option>
+          \n
+          <option value="Fashion & Lifestyle">Fashion</option>
+          \n
+          <option value="Home & Kitchen">Home</option>
+          \n
+          <option value="Automotive & Bikes">Auto</option>
+          \n</select
+        >\n
+        <div class="search-input-wrapper">
+          \n
+          <input
+            type="text"
+            id="global-search-input"
+            placeholder="Search for products, brands and more"
+            aria-label="Search items"
+            autocomplete="off"
+          />\n
+          <div
+            id="search-suggestions-box"
+            class="search-suggestions shadow-lg hidden"
+          ></div>
+          \n
+        </div>
+        \n
+        <button
+          id="global-search-btn"
+          class="search-btn-mega"
+          aria-label="Perform search"
+        >
+          \n <i class="fas fa-search"></i>\n</button
+        >\n
+      </div>
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="shop.html">Shop</a>
+        <a
+          href="sell.html"
+          style="color: var(--accent-color); font-weight: bold"
+          >Sell With Us</a
+        >
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+      <div class="nav-icons">
+        <button
+          onclick="toggleTheme()"
+          class="theme-toggle-btn"
+          title="Toggle Dark Mode"
+          aria-label="Toggle dark mode"
+        >
+          <i class="fas fa-moon"></i>
+        </button>
+        <a href="cart.html" aria-label="View Cart"
+          ><i class="fas fa-shopping-cart"></i> Cart</a
+        >
+        <a href="login.html" aria-label="User Login"
+          ><i class="fas fa-user"></i> Login</a
+        >
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Premium Quality. Unbeatable Prices.</h1>
+        <p>
+          Shop top-tier electronics, fashion, and home goods at prices that beat
+          major marketplaces. 100% Quality Guaranteed.
+        </p>
+        <a href="#products-section" class="cta-button">Shop The Sale</a>
+      </div>
+    </section>
+
+    <section class="trust-badges">
+      <div class="badge">
+        <i class="fas fa-truck"></i><span>Free Shipping Over $50</span>
+      </div>
+      <div class="badge">
+        <i class="fas fa-undo"></i><span>30-Day Easy Returns</span>
+      </div>
+      <div class="badge">
+        <i class="fas fa-lock"></i><span>100% Secure Checkout</span>
+      </div>
+      <div class="badge">
+        <i class="fas fa-headset"></i><span>24/7 Customer Support</span>
+      </div>
+    </section>
+
+    <section class="categories">
+      <h2>Featured Collections</h2>
+      <div class="category-grid">
+        <div
+          class="category-card scroll-animate delay-1"
+          onclick="filterCategory('Tech & Electronics')"
+        >
+          <i class="fas fa-laptop"></i> Tech & Electronics
+        </div>
+        <div
+          class="category-card scroll-animate delay-2"
+          onclick="filterCategory('Fashion & Lifestyle')"
+        >
+          <i class="fas fa-tshirt"></i> Fashion & Lifestyle
+        </div>
+        <div
+          class="category-card scroll-animate delay-3"
+          onclick="filterCategory('Home & Kitchen')"
+        >
+          <i class="fas fa-couch"></i> Home & Kitchen
+        </div>
+        <div
+          class="category-card scroll-animate delay-4"
+          onclick="filterCategory('Automotive & Bikes')"
+        >
+          <i class="fas fa-car"></i> Automotive & Bikes
+        </div>
+      </div>
+    </section>
+
+    <section class="product-highlight scroll-animate" id="deal-section">
+      <div class="highlight-image">
+        <img
+          id="deal-image"
+          src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&q=80"
+          alt="Premium Deal"
+          loading="lazy"
+        />
+      </div>
+      <div class="highlight-text">
+        <span class="tag">Deal of the Day</span>
+        <h2 id="deal-title">Loading Today's Deal...</h2>
+        <p id="deal-desc">
+          Check back daily for exclusive discounts on top-rated products.
+        </p>
+        <div class="highlight-price">
+          <span class="h-current" id="deal-current"></span>
+          <span class="h-old" id="deal-old"></span>
+        </div>
+        <button id="deal-btn" class="cta-button">Grab The Deal</button>
+      </div>
+    </section>
+
+    <section class="products-section products-section-alt">
+      <h2>Top Rated Highlights</h2>
+      <div class="product-grid" id="highlight-grid">
+        <!-- Dynamically populated by JS -->
+      </div>
+    </section>
+
+    <section id="products-section" class="products-section">
+      <h2 id="section-title">Best-Selling Products</h2>
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <section class="benefits-section">
+      <h2>Why Choose Digital Heroes?</h2>
+      <div class="benefits-grid">
+        <div class="benefit-card scroll-animate delay-1">
+          <i class="fas fa-tag"></i>
+          <h3>Direct from Brands</h3>
+          <p>
+            We cut out the middleman to bring you the best prices directly from
+            top manufacturers.
+          </p>
+        </div>
+        <div class="benefit-card scroll-animate delay-2">
+          <i class="fas fa-check-circle"></i>
+          <h3>Quality Verified</h3>
+          <p>
+            Every product passes a rigorous 5-point quality check before it gets
+            shipped to your door.
+          </p>
+        </div>
+        <div class="benefit-card scroll-animate delay-3">
+          <i class="fas fa-bolt"></i>
+          <h3>Lightning Fast Delivery</h3>
+          <p>
+            Our distributed warehouse network ensures your items arrive in 2-3
+            business days.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <h2>What Our Customers Say</h2>
+      <div class="test-grid">
+        <div class="test-card scroll-animate delay-1">
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i>
+          </div>
+          <p>
+            "I compared prices with Amazon, and Digital Heroes was $50 cheaper
+            for the exact same TV. Delivery was flawless!"
+          </p>
+          <h4>- Sarah M.</h4>
+        </div>
+        <div class="test-card scroll-animate delay-2">
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i>
+          </div>
+          <p>
+            "The UI is so clean, and finding products is a breeze. The 30-day
+            return policy gave me peace of mind."
+          </p>
+          <h4>- David L.</h4>
+        </div>
+        <div class="test-card scroll-animate delay-3">
+          <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star"></i><i class="fas fa-star"></i
+            ><i class="fas fa-star-half-alt"></i>
+          </div>
+          <p>
+            "Customer service actually answered the phone within 2 minutes.
+            Highly recommend shopping here."
+          </p>
+          <h4>- Emily R.</h4>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter" aria-labelledby="newsletter-title">
+      <h2 id="newsletter-title">Get Exclusive Offers</h2>
+      <p>Subscribe to our newsletter and get 15% off your first order.</p>
+      <form
+        class="newsletter-form"
+        action="#"
+        onsubmit="
+          event.preventDefault();
+          showToast('Subscribed successfully!');
+        "
+      >
+        <input
+          type="email"
+          placeholder="Enter your email address"
+          aria-label="Email Address"
+          required
+        />
+        <button type="submit" class="cta-button">Subscribe</button>
+      </form>
+    </section>
+
+    <footer class="mega-footer">
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h3 class="footer-logo-text">Digital Heroes</h3>
+          <p>
+            Premium quality tech, fashion, and lifestyle goods delivered
+            straight to you at unbeatable prices.
+          </p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Customer Support</h3>
+          <ul class="footer-links">
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Track Order</a></li>
+            <li><a href="#">FAQ & Help Center</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>100% Secure Shopping</h3>
+          <p>We use industry-standard encryption for all transactions.</p>
+          <div class="trust-badges footer-trust-badges">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-paypal"></i>
+            <i class="fab fa-cc-stripe"></i>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 Digital Heroes. All Rights Reserved. |
+          <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a>
+        </p>
+      </div>
+    </footer>
+
+    <button id="scrollTopBtn" class="scroll-to-top" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js?v=1.0.2"></script>
+  </body>
+</html>

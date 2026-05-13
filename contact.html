@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact Digital Heroes for support, inquiries, or feedback. We're here to help you with your premium shopping experience."
+    />
+    <title>Digital Heroes | Contact</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      .contact-container {
+        padding: 120px 5%;
+        max-width: 800px;
+        margin: auto;
+      }
+      .contact-container h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .contact-form {
+        background: var(--primary-bg-alt);
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+      }
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-family: var(--font-body);
+      }
+      .form-group textarea {
+        height: 150px;
+        resize: vertical;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar" role="banner">
+      <div class="logo"><a href="index.html">Digital Heroes</a></div>
+      <div class="search-bar mega-search-bar" id="global-search-container">
+        \n
+        <select
+          class="search-category-select"
+          id="global-search-category"
+          aria-label="Search Categories"
+        >
+          \n
+          <option value="all">All</option>
+          \n
+          <option value="Tech & Electronics">Tech</option>
+          \n
+          <option value="Fashion & Lifestyle">Fashion</option>
+          \n
+          <option value="Home & Kitchen">Home</option>
+          \n
+          <option value="Automotive & Bikes">Auto</option>
+          \n</select
+        >\n
+        <div class="search-input-wrapper">
+          \n
+          <input
+            type="text"
+            id="global-search-input"
+            placeholder="Search for products, brands and more"
+            aria-label="Search items"
+            autocomplete="off"
+          />\n
+          <div
+            id="search-suggestions-box"
+            class="search-suggestions shadow-lg hidden"
+          ></div>
+          \n
+        </div>
+        \n
+        <button
+          id="global-search-btn"
+          class="search-btn-mega"
+          aria-label="Perform search"
+        >
+          \n <i class="fas fa-search"></i>\n</button
+        >\n
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+      <div class="nav-icons">
+        <button
+          onclick="toggleTheme()"
+          class="theme-toggle-btn"
+          title="Toggle Dark Mode"
+          aria-label="Toggle dark mode"
+        >
+          <i class="fas fa-moon"></i>
+        </button>
+        <a href="cart.html" aria-label="View Cart"
+          ><i class="fas fa-shopping-cart"></i> Cart</a
+        >
+        <a href="login.html" aria-label="User Login"
+          ><i class="fas fa-user"></i> Login</a
+        >
+      </div>
+    </header>
+
+    <div class="contact-container">
+      <h1>Get in Touch</h1>
+      <form
+        class="contact-form"
+        action="#"
+        onsubmit="
+          event.preventDefault();
+          showToast('Message sent successfully!');
+        "
+      >
+        <div class="form-group">
+          <label for="contact-name">Name</label>
+          <input
+            type="text"
+            id="contact-name"
+            placeholder="Your Name"
+            required
+            aria-required="true"
+          />
+        </div>
+        <div class="form-group">
+          <label for="contact-email">Email Address</label>
+          <input
+            type="email"
+            id="contact-email"
+            placeholder="Your Email"
+            required
+            aria-required="true"
+          />
+        </div>
+        <div class="form-group">
+          <label for="contact-message">Message</label>
+          <textarea
+            id="contact-message"
+            placeholder="How can we help you?"
+            required
+            aria-required="true"
+          ></textarea>
+        </div>
+        <button type="submit" class="cta-button full-width-btn">
+          Send Message
+        </button>
+      </form>
+    </div>
+
+    <footer class="mega-footer">
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h3 class="footer-logo-text">Digital Heroes</h3>
+          <p>
+            Premium quality tech, fashion, and lifestyle goods delivered
+            straight to you at unbeatable prices.
+          </p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Customer Support</h3>
+          <ul class="footer-links">
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Track Order</a></li>
+            <li><a href="#">FAQ & Help Center</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>100% Secure Shopping</h3>
+          <p>We use industry-standard encryption for all transactions.</p>
+          <div class="trust-badges footer-trust-badges">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-paypal"></i>
+            <i class="fab fa-cc-stripe"></i>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 Digital Heroes. All Rights Reserved. |
+          <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a>
+        </p>
+      </div>
+    </footer>
+
+    <button id="scrollTopBtn" class="scroll-to-top" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="script.js" defer></script>
+  </body>
+</html>

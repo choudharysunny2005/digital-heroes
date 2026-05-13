@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sell With Us | Digital Heroes Partners</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Outfit:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --partner-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      }
+      .sell-hero {
+        background: var(--partner-gradient);
+        color: white;
+        padding: 120px 20px 80px;
+        text-align: center;
+      }
+      .sell-hero h1 {
+        font-size: 3.5rem;
+        font-family: "Outfit", sans-serif;
+        margin-bottom: 20px;
+        letter-spacing: -1px;
+      }
+      .sell-hero p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto 30px;
+      }
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: -50px auto 50px;
+        padding: 0 20px;
+        z-index: 10;
+        position: relative;
+      }
+      .feat-card {
+        background: #fff;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+      .feat-card:hover {
+        transform: translateY(-5px);
+      }
+      .feat-card i {
+        font-size: 2.5rem;
+        background: var(--partner-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 15px;
+      }
+      .feat-card h3 {
+        margin-bottom: 10px;
+        color: var(--secondary-color);
+      }
+
+      .form-container {
+        max-width: 800px;
+        margin: 40px auto 80px;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+        padding: 40px;
+      }
+
+      body.dark-mode .feat-card,
+      body.dark-mode .form-container {
+        background: #1e293b;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .input-group {
+        margin-bottom: 20px;
+      }
+      .input-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: var(--text-color);
+      }
+      .input-group input,
+      .input-group select,
+      .input-group textarea {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        font-family: inherit;
+        background: #f8fafc;
+      }
+      body.dark-mode .input-group input,
+      body.dark-mode .input-group select {
+        background: #0f172a;
+        border-color: #334155;
+        color: #fff;
+      }
+
+      .form-grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      @media (max-width: 600px) {
+        .form-grid-2 {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .terms-box {
+        background: #f1f5f9;
+        padding: 15px;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        color: #475569;
+        margin-bottom: 25px;
+        border: 1px solid #e2e8f0;
+      }
+      body.dark-mode .terms-box {
+        background: #0f172a;
+        color: #94a3b8;
+        border-color: #334155;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo"><a href="index.html">Digital Heroes</a></div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="sell.html" class="active">Sell With Us</a>
+      </nav>
+      <div class="nav-icons">
+        <a href="login.html"><i class="fas fa-user"></i> Partner Log In</a>
+      </div>
+    </header>
+
+    <section class="sell-hero">
+      <h1>Reach Millions. Sell Globally.</h1>
+      <p>
+        Launch your retail store on the world's most loved digital marketplace.
+        Low commission, high security, thousands of eager buyers.
+      </p>
+      <a
+        href="#apply"
+        class="cta-button"
+        style="
+          background: #fff;
+          color: #4f46e5;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        "
+        >Get Started Now</a
+      >
+    </section>
+
+    <section class="feature-grid">
+      <div class="feat-card">
+        <i class="fas fa-chart-line"></i>
+        <h3>High Exposure</h3>
+        <p>
+          Instantly present your inventory to an audience of tech & luxury
+          seekers.
+        </p>
+      </div>
+      <div class="feat-card">
+        <i class="fas fa-wallet"></i>
+        <h3>Fast Payouts</h3>
+        <p>
+          Secure, predictable payments directly into your business bank account.
+        </p>
+      </div>
+      <div class="feat-card">
+        <i class="fas fa-shield-halved"></i>
+        <h3>Protected Trades</h3>
+        <p>
+          Industry-leading fraud checks to secure both vendor and customer
+          assets.
+        </p>
+      </div>
+    </section>
+
+    <div class="container" id="apply">
+      <div class="form-container">
+        <h2 style="font-size: 2rem; margin-bottom: 10px; text-align: center">
+          Submit Your Product Listing
+        </h2>
+        <p
+          style="
+            text-align: center;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+          "
+        >
+          Ready to scale? Enter your company and product details below to apply
+          for activation.
+        </p>
+
+        <div
+          id="success-msg"
+          style="
+            display: none;
+            background: #dcfce7;
+            color: #166534;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+          "
+        >
+          <i
+            class="fas fa-check-circle"
+            style="font-size: 1.5rem; margin-bottom: 10px; display: block"
+          ></i>
+          Application Received! Our auditing team will review your listing
+          within 24 hours.
+        </div>
+
+        <form id="seller-form" onsubmit="submitVendorApp(event)">
+          <h3
+            style="
+              margin-bottom: 15px;
+              border-bottom: 2px solid #f1f5f9;
+              padding-bottom: 10px;
+            "
+          >
+            Company Information
+          </h3>
+          <div class="form-grid-2">
+            <div class="input-group">
+              <label>Vendor/Company Name *</label>
+              <input
+                type="text"
+                id="vendor-name"
+                placeholder="e.g. Apex Electronics"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label>Business Email Address *</label>
+              <input
+                type="email"
+                id="vendor-email"
+                placeholder="name@company.com"
+                required
+              />
+            </div>
+          </div>
+
+          <h3
+            style="
+              margin-top: 30px;
+              margin-bottom: 15px;
+              border-bottom: 2px solid #f1f5f9;
+              padding-bottom: 10px;
+            "
+          >
+            Listing Details
+          </h3>
+          <div class="input-group">
+            <label>Product Name *</label>
+            <input
+              type="text"
+              id="p-name"
+              placeholder="Maximum 100 characters"
+              required
+            />
+          </div>
+          <div class="form-grid-2">
+            <div class="input-group">
+              <label>Category *</label>
+              <select id="p-cat" required>
+                <option value="Tech & Electronics">Tech & Electronics</option>
+                <option value="Fashion & Lifestyle">Fashion & Lifestyle</option>
+                <option value="Home & Kitchen">Home & Kitchen</option>
+                <option value="Automotive & Bikes">Automotive & Bikes</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label>Retail Price ($) *</label>
+              <input type="number" id="p-price" step="0.01" required />
+            </div>
+          </div>
+          <div class="input-group">
+            <label>Image Asset URL (Hosted on CDN or Cloud) *</label>
+            <input
+              type="url"
+              id="p-img"
+              placeholder="https://images.unsplash.com/..."
+              required
+            />
+          </div>
+
+          <div class="terms-box">
+            <strong>Standard Partnership Terms & Conditions:</strong><br />
+            1. A standard 12% transaction fee applies on final sales.<br />
+            2. All items must conform to global safety regulations.<br />
+            3. Minimum 30-day manufacturer warranty requirement for all consumer
+            tech.<br />
+            4. Payouts are processed every Friday for verified, delivered
+            parcels.
+          </div>
+
+          <div style="display: flex; gap: 10px; margin-bottom: 25px">
+            <input
+              type="checkbox"
+              id="agree-terms"
+              required
+              style="width: 20px; height: 20px; margin-top: 2px"
+            />
+            <label
+              for="agree-terms"
+              style="font-size: 0.9rem; font-weight: bold"
+              >I certify that the above data is accurate and fully agree to the
+              Digital Heroes Vendor Terms & Conditions.</label
+            >
+          </div>
+
+          <button
+            type="submit"
+            class="cta-button"
+            style="
+              width: 100%;
+              padding: 18px;
+              font-size: 1.1rem;
+              background: var(--partner-gradient);
+              border: none;
+            "
+          >
+            Finalize Listing & Submit for Review
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <footer class="mega-footer">
+      <div class="footer-bottom">
+        <p>&copy; 2025 Digital Heroes Marketplace.</p>
+      </div>
+    </footer>
+
+    <script>
+      async function submitVendorApp(e) {
+        e.preventDefault();
+        const form = document.getElementById("seller-form");
+        const success = document.getElementById("success-msg");
+
+        const vendorName = document.getElementById("vendor-name").value.trim();
+        const vendorEmail = document
+          .getElementById("vendor-email")
+          .value.trim();
+        const productName = document.getElementById("p-name").value.trim();
+        const price = parseFloat(document.getElementById("p-price").value);
+        const category = document.getElementById("p-cat").value;
+        const imageUrl = document.getElementById("p-img").value.trim();
+
+        const submission = {
+          name: productName,
+          category: category,
+          price: price,
+          imageUrl:
+            imageUrl || "https://picsum.photos/seed/" + Date.now() + "/600/600",
+          vendorName: vendorName,
+          vendorEmail: vendorEmail,
+          originalPrice: price * 1.3,
+          isApproved: false,
+          submittedAt: new Date().toISOString(),
+        };
+
+        // STEP 1: Always save to localStorage immediately (guaranteed backup)
+        try {
+          const existing = JSON.parse(
+            localStorage.getItem("dh_vendor_submissions") || "[]",
+          );
+          existing.push(submission);
+          localStorage.setItem(
+            "dh_vendor_submissions",
+            JSON.stringify(existing),
+          );
+        } catch (lsErr) {
+          console.warn("LocalStorage save failed:", lsErr);
+        }
+
+        // STEP 2: Also try sending to MongoDB API (bonus if server is running)
+        try {
+          await fetch("http://localhost:8080/api/products", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(submission),
+          });
+        } catch (apiErr) {
+          // Silent fail - localStorage already has the data
+          console.info("API offline - submission saved to localStorage only.");
+        }
+
+        // Always show success regardless
+        form.style.display = "none";
+        success.style.display = "block";
+        window.scrollTo({
+          top: document.getElementById("apply").offsetTop - 50,
+          behavior: "smooth",
+        });
+      }
+    </script>
+  </body>
+</html>

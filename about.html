@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Learn more about Digital Heroes, our mission to provide premium products at unbeatable prices, and our commitment to quality."
+    />
+    <title>Digital Heroes | About Us</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      .page-content {
+        padding: 120px 5%;
+        max-width: 1200px;
+        margin: auto;
+        text-align: center;
+      }
+      .page-content h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        color: var(--secondary-color);
+      }
+      .page-content p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-gray);
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="navbar" role="banner">
+      <div class="logo"><a href="index.html">Digital Heroes</a></div>
+      <div class="search-bar mega-search-bar" id="global-search-container">
+        \n
+        <select
+          class="search-category-select"
+          id="global-search-category"
+          aria-label="Search Categories"
+        >
+          \n
+          <option value="all">All</option>
+          \n
+          <option value="Tech & Electronics">Tech</option>
+          \n
+          <option value="Fashion & Lifestyle">Fashion</option>
+          \n
+          <option value="Home & Kitchen">Home</option>
+          \n
+          <option value="Automotive & Bikes">Auto</option>
+          \n</select
+        >\n
+        <div class="search-input-wrapper">
+          \n
+          <input
+            type="text"
+            id="global-search-input"
+            placeholder="Search for products, brands and more"
+            aria-label="Search items"
+            autocomplete="off"
+          />\n
+          <div
+            id="search-suggestions-box"
+            class="search-suggestions shadow-lg hidden"
+          ></div>
+          \n
+        </div>
+        \n
+        <button
+          id="global-search-btn"
+          class="search-btn-mega"
+          aria-label="Perform search"
+        >
+          \n <i class="fas fa-search"></i>\n</button
+        >\n
+      </div>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="shop.html">Shop</a>
+        <a href="about.html" class="active">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+      <div class="nav-icons">
+        <button
+          onclick="toggleTheme()"
+          class="theme-toggle-btn"
+          title="Toggle Dark Mode"
+          aria-label="Toggle dark mode"
+        >
+          <i class="fas fa-moon"></i>
+        </button>
+        <a href="cart.html" aria-label="View Cart"
+          ><i class="fas fa-shopping-cart"></i> Cart</a
+        >
+        <a href="login.html" aria-label="User Login"
+          ><i class="fas fa-user"></i> Login</a
+        >
+      </div>
+    </header>
+
+    <div class="page-content">
+      <h1>About Digital Heroes</h1>
+      <p>
+        Welcome to Digital Heroes, your number one source for all premium
+        products. We're dedicated to giving you the very best of electronics,
+        fashion, and home goods, with a focus on quality, customer service, and
+        unbeatable prices.
+      </p>
+      <p>
+        Founded in 2025, Digital Heroes has come a long way from its beginnings.
+        We now serve customers all over the world, and are thrilled to be a part
+        of the quirky, eco-friendly, fair trade wing of the retail industry.
+      </p>
+      <p>
+        We hope you enjoy our products as much as we enjoy offering them to you.
+        If you have any questions or comments, please don't hesitate to contact
+        us.
+      </p>
+    </div>
+
+    <footer class="mega-footer">
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h3 class="footer-logo-text">Digital Heroes</h3>
+          <p>
+            Premium quality tech, fashion, and lifestyle goods delivered
+            straight to you at unbeatable prices.
+          </p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Customer Support</h3>
+          <ul class="footer-links">
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Returns & Exchanges</a></li>
+            <li><a href="#">Track Order</a></li>
+            <li><a href="#">FAQ & Help Center</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>100% Secure Shopping</h3>
+          <p>We use industry-standard encryption for all transactions.</p>
+          <div class="trust-badges footer-trust-badges">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-paypal"></i>
+            <i class="fab fa-cc-stripe"></i>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 Digital Heroes. All Rights Reserved. |
+          <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a>
+        </p>
+      </div>
+    </footer>
+
+    <button id="scrollTopBtn" class="scroll-to-top" title="Go to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="script.js" defer></script>
+  </body>
+</html>
