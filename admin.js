@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   switchTab("dashboard");
 });
 
-const API_BASE = "http://localhost:8080/api";
+const API_BASE = "/api";
 
 // Tab Switching System
 function switchTab(tabName) {

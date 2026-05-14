@@ -318,33 +318,18 @@
 
         <!-- Analytics Section -->
         <section id="analytics-section" class="admin-card shadow-lg hidden">
-          <div
-            class="admin-card-title"
-            style="
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-            "
-          >
+          <div class="admin-card-title admin-card-title-flex">
             <div>
               <span>Revenue Analytics</span>
-              <div
-                id="analytics-total"
-                style="
-                  font-size: 1rem;
-                  color: var(--accent-color);
-                  font-weight: 600;
-                  margin-top: 5px;
-                "
-              >
+              <div id="analytics-total" class="analytics-total-val">
                 Total Sales: $0.00
               </div>
             </div>
             <select
               id="analytics-filter"
-              class="select-admin"
+              class="select-admin analytics-filter-select"
               onchange="fetchAnalytics()"
-              style="width: auto; padding: 5px 10px; font-size: 0.9rem"
+              title="Analytics Filter"
             >
               <option value="today">Today (Hourly)</option>
               <option value="week" selected>Last 7 Days</option>
@@ -352,10 +337,10 @@
               <option value="year">Last 12 Months</option>
             </select>
           </div>
-          <div style="padding: 20px">
+          <div class="p-20">
             <canvas
               id="revenueChart"
-              style="width: 100%; max-height: 400px"
+              class="revenue-chart-canvas"
             ></canvas>
           </div>
         </section>
@@ -365,33 +350,19 @@
           <div class="admin-card-title">
             <span>Promotions & Deals Management</span>
           </div>
-          <div style="padding: 20px">
+          <div class="p-20">
             <form onsubmit="savePromotions(event)">
-              <div
-                class="form-group"
-                style="
-                  margin-bottom: 30px;
-                  border-bottom: 1px solid #eee;
-                  padding-bottom: 20px;
-                "
-              >
-                <h3 style="margin-bottom: 15px; color: var(--secondary-color)">
+              <div class="form-group deal-form-group">
+                <h3 class="promo-h3">
                   <i class="fas fa-star"></i> Deal of the Day
                 </h3>
-                <label style="display: block; margin-bottom: 10px"
-                  >Select a specific product to highlight as the Hero
-                  Deal</label
+                <label class="promo-label"
+                  >Select a specific product to highlight as the Hero Deal</label
                 >
                 <select
                   id="admin-deal-select"
-                  style="
-                    width: 100%;
-                    padding: 10px;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    font-family: var(--font-body);
-                    background: #fff;
-                  "
+                  class="admin-select-full admin-select-bg"
+                  title="Deal of the Day Select"
                 >
                   <option value="auto">
                     Automatic (Daily Mathematical Rotation)
@@ -400,40 +371,28 @@
               </div>
 
               <div class="form-group">
-                <h3 style="margin-bottom: 15px; color: var(--secondary-color)">
+                <h3 class="promo-h3">
                   <i class="fas fa-fire"></i> Top Rated Highlights
                 </h3>
-                <label style="display: block; margin-bottom: 10px"
+                <label class="promo-label"
                   >Select exactly 4 products for the top grid (Hold Ctrl/Cmd to
                   select multiple)</label
                 >
                 <select
                   id="admin-highlights-select"
                   multiple
-                  style="
-                    width: 100%;
-                    padding: 10px;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    min-height: 150px;
-                    font-family: var(--font-body);
-                  "
+                  class="admin-select-full admin-select-multiple"
+                  title="Top Rated Highlights Select"
                 >
                   <option disabled>Loading products...</option>
                 </select>
-                <small
-                  style="
-                    color: var(--text-gray);
-                    display: block;
-                    margin-top: 5px;
-                  "
+                <small class="promo-small"
                   >If less than 4 are selected, the automated weekly rotation
                   will fill the empty slots.</small
                 >
               </div>
-              <button type="submit" class="cta-button" style="margin-top: 20px">
-                <i class="fas fa-save" style="margin-right: 5px"></i> Save
-                Promotions
+              <button type="submit" class="cta-button mt-20">
+                <i class="fas fa-save mr-5"></i> Save Promotions
               </button>
             </form>
           </div>
@@ -444,27 +403,31 @@
           <div class="admin-card-title">
             <span>Store Settings</span>
           </div>
-          <div style="padding: 20px">
+          <div class="p-20">
             <form onsubmit="saveSettings(event)">
               <div class="form-group">
-                <label>Store Name</label>
+                <label for="store-name-input">Store Name</label>
                 <input
                   type="text"
                   id="store-name-input"
                   value="Digital Heroes"
                   class="admin-settings-input"
+                  title="Store Name Input"
+                  placeholder="Digital Heroes"
                 />
               </div>
               <div class="form-group">
-                <label>Support Email</label>
+                <label for="store-email-input">Support Email</label>
                 <input
                   type="email"
                   id="store-email-input"
                   value="support@digitalheroes.com"
                   class="admin-settings-input"
+                  title="Support Email Input"
+                  placeholder="support@digitalheroes.com"
                 />
               </div>
-              <button type="submit" class="cta-button" style="margin-top: 15px">
+              <button type="submit" class="cta-button mt-15">
                 Save Settings
               </button>
             </form>
@@ -537,7 +500,7 @@
 
     <!-- Order Details Modal Overlay -->
     <div class="modal-overlay" id="order-details-modal">
-      <div class="modal-content modal-content-admin" style="max-width: 600px">
+      <div class="modal-content modal-content-admin modal-admin-wide">
         <button
           class="modal-close"
           onclick="
@@ -550,95 +513,40 @@
         </button>
         <h2 class="modal-title" id="od-title">Order Details</h2>
 
-        <div
-          style="
-            background: var(--primary-bg-alt);
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-          "
-        >
-          <h4 style="margin-bottom: 10px; color: var(--secondary-color)">
+        <div class="od-customer-info">
+          <h4 class="od-h4">
             Customer Information
           </h4>
           <p><strong>Name:</strong> <span id="od-name"></span></p>
           <p><strong>Email:</strong> <span id="od-email"></span></p>
           <p>
             <strong>Payment Method:</strong>
-            <span
-              id="od-payment"
-              style="font-weight: 600; color: var(--accent-color)"
-            ></span>
+            <span id="od-payment" class="od-payment-span"></span>
           </p>
           <p><strong>Order Date:</strong> <span id="od-date"></span></p>
           <p><strong>Shipping Address:</strong></p>
-          <p
-            id="od-address"
-            style="
-              white-space: pre-line;
-              background: #fff;
-              padding: 10px;
-              border-radius: 4px;
-              border: 1px solid #eee;
-              margin-top: 5px;
-            "
-          ></p>
+          <p id="od-address" class="od-address-p"></p>
         </div>
 
-        <h4 style="margin-bottom: 10px; color: var(--secondary-color)">
+        <h4 class="od-h4">
           Items Purchased
         </h4>
-        <div
-          id="od-items"
-          style="
-            max-height: 250px;
-            overflow-y: auto;
-            margin-bottom: 20px;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            padding: 10px;
-          "
-        >
+        <div id="od-items" class="od-items-div">
           <!-- Populated dynamically -->
         </div>
 
-        <div
-          style="
-            display: flex;
-            justify-content: space-between;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-top: 2px solid #eee;
-            padding-top: 15px;
-          "
-        >
+        <div class="od-total-row">
           <span>Total Amount:</span>
-          <span id="od-total" style="color: var(--accent-color)"></span>
+          <span id="od-total" class="od-total-span"></span>
         </div>
 
-        <div
-          style="
-            margin-top: 20px;
-            background: #f8fafc;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-          "
-        >
-          <strong style="color: var(--secondary-color)">Update Status:</strong>
+        <div class="od-status-div">
+          <strong class="od-status-strong">Update Status:</strong>
           <select
             id="od-status"
             onchange="updateOrderStatus(this.value)"
-            style="
-              padding: 8px 12px;
-              border: 1px solid #cbd5e1;
-              border-radius: 4px;
-              font-weight: bold;
-              font-family: var(--font-body);
-            "
+            class="od-status-select"
+            title="Order Status Select"
           >
             <option value="Processing">Processing</option>
             <option value="Shipped">Shipped</option>

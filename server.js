@@ -5,9 +5,10 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static(__dirname));
 
 // MongoDB Connection (Update URI if needed)
-const MONGO_URI = "mongodb://localhost:27017/digital_heroes_shop";
+const MONGO_URI = process.env.MONGO_URI || "mongodb://localhost:27017/digital_heroes_shop";
 
 mongoose
   .connect(MONGO_URI)
@@ -286,5 +287,5 @@ app.put("/api/orders/:id/status", async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

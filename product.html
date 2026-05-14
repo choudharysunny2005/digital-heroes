@@ -218,11 +218,7 @@
       <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="shop.html">Shop</a>
-        <a
-          href="sell.html"
-          style="color: var(--accent-color); font-weight: bold"
-          >Sell With Us</a
-        >
+        <a href="sell.html" class="nav-highlight">Sell With Us</a>
         <a href="about.html">About Us</a>
       </nav>
       <div class="nav-icons">
@@ -240,14 +236,7 @@
       </div>
     </header>
 
-    <main
-      style="
-        padding-top: 110px;
-        padding-bottom: 60px;
-        background: var(--primary-bg-alt);
-        min-height: 80vh;
-      "
-    >
+    <main class="main-pd-container">
       <div class="container">
         <div class="breadcrumb" id="breadcrumb">
           <a href="index.html">Home</a> &rsaquo;
@@ -256,7 +245,7 @@
         <div id="product-target">
           <div class="pd-loading">
             <div class="spinner"></div>
-            <p style="color: var(--text-gray)">Fetching product details...</p>
+            <p class="text-gray">Fetching product details...</p>
           </div>
         </div>
       </div>
@@ -270,7 +259,7 @@
 
     <script src="script.js?v=1.0.2"></script>
     <script>
-      const PROD_API = "http://localhost:8080/api";
+      const PROD_API = "/api";
 
       async function loadProductPage() {
         var urlParams = new URLSearchParams(window.location.search);
