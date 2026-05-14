@@ -5,6 +5,25 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+// Security: Restrict Admin Page to Local PC Only
+const blockRemoteAdmin = (req, res, next) => {
+  const adminRoutes = ['/admin.html', '/admin.js'];
+  if (adminRoutes.some(route => req.path === route || req.path.startsWith(route))) {
+    const isLocal = req.hostname === 'localhost' || req.hostname === '127.0.0.1';
+    if (!isLocal) {
+      return res.status(403).send(`
+        <div style="text-align: center; margin-top: 100px; font-family: sans-serif;">
+          <h1 style="color: #e53e3e;">403 Forbidden - Access Denied</h1>
+          <p>For security reasons, the Admin Dashboard is restricted and can only be accessed locally from the host computer.</p>
+        </div>
+      `);
+    }
+  }
+  next();
+};
+app.use(blockRemoteAdmin);
+
 app.use(express.static(__dirname));
 
 // MongoDB Connection (Update URI if needed)
