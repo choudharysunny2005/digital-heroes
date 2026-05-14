@@ -434,7 +434,7 @@ async function fetchProducts() {
   }
 
   try {
-    const response = await fetch("/api/products");
+    const response = await fetch("/api/products?t=" + Date.now());
     allProducts = await response.json();
 
     // Guarantee every product has a usable _id (assign index-based if missing)

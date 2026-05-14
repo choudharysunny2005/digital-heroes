@@ -284,19 +284,10 @@
         try {
           var products = [];
 
-          // STEP 1: Read from sessionStorage cache (written by script.js when cards were rendered)
-          // This guarantees IDs match exactly since it's the same data set
-          try {
-            var cached = sessionStorage.getItem("dh_products_cache");
-            if (cached) {
-              var parsed = JSON.parse(cached);
-              if (parsed && parsed.length > 0) products = parsed;
-            }
-          } catch (e) {}
+          // Fetch fresh from API every time to ensure updated images and details are shown
 
-          // STEP 2: Fetch fresh from API if cache empty or stale
           if (products.length === 0) {
-            var res = await fetch(PROD_API + "/products");
+            var res = await fetch(PROD_API + "/products?t=" + Date.now());
             if (!res.ok) throw new Error("Server error " + res.status);
             products = await res.json();
 
